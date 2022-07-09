@@ -1,0 +1,12 @@
+// -----------------------------------------------------------------------//
+// Autor: Paulo Radatz
+// e-mail: paulo.radatz@gmail.com
+// -----------------------------------------------------------------------//
+
+ClearAll
+
+compile "C:\PauloRadatz\GitHub\SBSE2022\feeders\123Bus\IEEE123Master.dss"
+
+solve
+
+show voltages ln nodes
