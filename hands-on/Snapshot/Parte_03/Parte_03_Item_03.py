@@ -34,7 +34,7 @@ print(f"V_mag = {v_mag} V")
 print(f"V_ang = {v_ang} deg")
 print(f"b")
 
-v_base = dss.bus_kv_base() * 1000.0
+v_base = dss.bus_kv_base() * 1000.0  # Phase-to-ground
 print(f"V_mag_pu = {v_mag / v_base} pu")
 print(f"V_ang = {v_ang} deg")
 print(f"Voltage base = {v_base} V")

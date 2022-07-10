@@ -1,0 +1,25 @@
+// -----------------------------------------------------------------------//
+// Autor: Paulo Radatz
+// e-mail: paulo.radatz@gmail.com
+// -----------------------------------------------------------------------//
+
+ClearAll
+
+compile "C:\PauloRadatz\GitHub\SBSE2022\feeders\123Bus\IEEE123Master.dss"
+BusCoords "C:\PauloRadatz\GitHub\SBSE2022\feeders\123Bus\BusCoords.dat"
+
+New Loadshape.my_loadshape npts=24 interval=1 mult=(0.39, 0.29, 0.25, 0.23, 0.31, 0.49, 0.58, 0.46, 0.51, 0.52, 0.58, 0.59, 0.63, 0.56, 0.54, 0.54, 0.58, 0.72, 0.86, 0.91, 1, 0.74, 0.51)
+batchedit load..* daily=my_loadshape
+
+new loadshape.gen npts=24 interval=1 mult=[0 0 0 0 0 0 .1 .2 .3  .5  .8  .9  1.0  1.0  .99  .9  .7  .4  .1 0  0  0  0  0]
+new generator.gen bus1=108 kv=4.160 kw=6000 pf=1 daily=gen
+
+set demandinterval=True
+set voltexceptionreport=True
+
+set mode=daily
+set stepsize=1h
+set number=24
+set maxiterations=20
+solve
+closeDI
