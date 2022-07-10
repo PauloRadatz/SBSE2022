@@ -6,23 +6,9 @@
 ClearAll
 
 compile "C:\PauloRadatz\GitHub\SBSE2022\feeders\123Bus\IEEE123Master.dss"
+BusCoords "C:\PauloRadatz\GitHub\SBSE2022\feeders\123Bus\BusCoords.dat"
 
-batchedit load..* daily=default
-
-New EnergyMeter.Feeder element=Line.L115 terminal=1
-New Monitor.power element=Line.L115 terminal=1 mode=1 ppolar=NO
-
-set demandinterval=True
-set voltexceptionreport=True
-
-set mode=daily
-set stepsize=1h
-set number=24
 solve
 
-closeDI
-
-/* Snap
-solve
-Show Voltage LN Nodes
-*/
+Show busFlow 152 kVA Elem
+Show buses
