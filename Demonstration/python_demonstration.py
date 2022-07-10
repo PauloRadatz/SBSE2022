@@ -14,6 +14,8 @@ dss_file = pathlib.Path(script_path).joinpath("../feeders", "123Bus", "IEEE123Ma
 
 dss = py_dss_interface.DSSDLL()  # using OpenDSS provided in the package
 
+dss.text("ClearAll")
+
 dss.text(f"compile [{dss_file}]")
 dss.text("solve")
 
