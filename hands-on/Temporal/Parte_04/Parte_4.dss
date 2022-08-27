@@ -17,6 +17,8 @@ new generator.gen bus1=108 kv=4.160 kw=6000 pf=1 daily=gen
 set demandinterval=True
 set voltexceptionreport=True
 
+edit generator.gen pf=-0.97
+
 set mode=daily
 set stepsize=1h
 set number=24
